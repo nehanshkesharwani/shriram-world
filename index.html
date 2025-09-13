@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Under Development</title>
+  <style>
+    /* Reset defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #0078ff;
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    p {
+      font-size: 1.25rem;
+      max-width: 500px;
+      color: #555;
+      line-height: 1.6;
+      animation: fadeIn 2s 0.5s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    /* Spinning loader */
+    .loader {
+      margin-top: 2rem;
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #0078ff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1.2s linear infinite, fadeIn 2s 1s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      color: #999;
+      animation: fadeIn 2s 1.5s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    /* Animations */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive text */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .loader { width: 40px; height: 40px; border-width: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🚧 Website Under Development 🚧</h1>
+  <p>Our website is currently under development.<br>
+     We’ll be live with the new experience very soon.<br>
+     Thank you for your patience.</p>
+  
+  <div class="loader"></div>
+  
+  <footer>© <span id="year"></span> Shri Ram World. All rights reserved.</footer>
+  
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
